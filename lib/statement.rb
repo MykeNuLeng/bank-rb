@@ -2,7 +2,7 @@
 
 require 'money'
 
-# this formats an bank accounts data into a readable statement
+# this formats a bank accounts data into a readable statement
 class Statement
   DISPLAY_HEADER = 'date || credit || debit || balance'
   I18n.enforce_available_locales = false
