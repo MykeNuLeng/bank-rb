@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'account'
 
 describe Account do
   context 'depositing £1' do
-
     before do
       subject.deposit(100)
     end
@@ -12,7 +13,7 @@ describe Account do
     end
 
     it 'Depositing £1 into a new account will add the date to the transaction' do
-      expect(subject.history[:date]).to include Time.new.strftime("%d/%m/%Y")
+      expect(subject.history[:date]).to include Time.new.strftime('%d/%m/%Y')
     end
 
     it 'Depositing £1 into a new account will add 0 to the debit history' do
@@ -24,13 +25,12 @@ describe Account do
     end
 
     context 'Withdrawing 50p' do
-
       before do
         subject.withdraw(50)
       end
 
       it 'A new date will be added' do
-        expect(subject.history[:date][-1]).to eq Time.new.strftime("%d/%m/%Y")
+        expect(subject.history[:date][-1]).to eq Time.new.strftime('%d/%m/%Y')
       end
 
       it 'The most recent credit will be 0' do
