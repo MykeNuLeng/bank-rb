@@ -20,8 +20,24 @@ describe Statement do
       balance: [10_000, 30_000]
     }
   end
+
+  let(:account3) do
+    double :account, history: {
+      date: [],
+      credit: [],
+      debit: [],
+      balance: []
+    }
+  end
+
   subject(:test_statement1) { Statement.new(account: account1) }
   subject(:test_statement2) { Statement.new(account: account2) }
+  subject(:test_statement3) { Statement.new(account: account3) }
+
+  it 'An empty bank acount will just have the header as the output' do
+    expect(test_statement3.display_statement).to eq 'date || credit || debit || balance'
+  end
+
   it 'Will have the correct output according to the acceptance criterea.' do
     expect(test_statement1.display_statement).to eq([
       'date || credit || debit || balance',
