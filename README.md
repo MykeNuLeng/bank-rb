@@ -21,3 +21,10 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 
 10/01/2012 || 1000.00 || || 1000.00
+
+## Method
+* This problem was solved in a test driven manner using RSpec. 
+* It was first separated into two classes, one is the account, and the other was responsible for returning the statement in the desired format.
+* Rubocop was used to lint this code.
+* The money gem was used to format currency. 
+* Simple-cov was used for transparency on the test coverage. 
